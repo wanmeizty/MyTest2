@@ -1,0 +1,1174 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5612C001CA90DE600C22D2A /* GoodsOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612B9E1CA90DE600C22D2A /* GoodsOrder.m */; };
+		A5612C011CA90DE600C22D2A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5612BA11CA90DE600C22D2A /* libcrypto.a */; };
+		A5612C021CA90DE600C22D2A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5612BA21CA90DE600C22D2A /* libssl.a */; };
+		A5612C031CA90DE600C22D2A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A5612BA31CA90DE600C22D2A /* LICENSE */; };
+		A5612C041CA90DE600C22D2A /* ReapalUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BF11CA90DE600C22D2A /* ReapalUtil.m */; };
+		A5612C051CA90DE600C22D2A /* AESHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BF41CA90DE600C22D2A /* AESHandler.m */; };
+		A5612C061CA90DE600C22D2A /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BF71CA90DE600C22D2A /* Encrypt.m */; };
+		A5612C071CA90DE600C22D2A /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BF91CA90DE600C22D2A /* GTMBase64.m */; };
+		A5612C081CA90DE600C22D2A /* RSAHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BFC1CA90DE600C22D2A /* RSAHandler.m */; };
+		A5612C091CA90DE600C22D2A /* ReapalSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612BFF1CA90DE600C22D2A /* ReapalSdk.m */; };
+		A5612C0C1CA9132500C22D2A /* ReapalApp.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612C0B1CA9132500C22D2A /* ReapalApp.m */; };
+		A5612C0F1CA918ED00C22D2A /* CreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612C0E1CA918ED00C22D2A /* CreditViewController.m */; };
+		A5612C121CA91AC700C22D2A /* GetTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612C111CA91AC700C22D2A /* GetTime.m */; };
+		A5612C151CA9210500C22D2A /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5612C141CA9210500C22D2A /* CardViewController.m */; };
+		A5EF8CA31C9FD6A20088F614 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8CA21C9FD6A20088F614 /* main.m */; };
+		A5EF8CA61C9FD6A20088F614 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8CA51C9FD6A20088F614 /* AppDelegate.m */; };
+		A5EF8CA91C9FD6A20088F614 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8CA81C9FD6A20088F614 /* ViewController.m */; };
+		A5EF8CAC1C9FD6A20088F614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8CAA1C9FD6A20088F614 /* Main.storyboard */; };
+		A5EF8CAE1C9FD6A20088F614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8CAD1C9FD6A20088F614 /* Assets.xcassets */; };
+		A5EF8CB11C9FD6A20088F614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8CAF1C9FD6A20088F614 /* LaunchScreen.storyboard */; };
+		A5EF8CBC1C9FD6A20088F614 /* ReapalSDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8CBB1C9FD6A20088F614 /* ReapalSDKDemoTests.m */; };
+		A5EF8CC71C9FD6A20088F614 /* ReapalSDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8CC61C9FD6A20088F614 /* ReapalSDKDemoUITests.m */; };
+		A5EF8D7F1C9FDA870088F614 /* SearchBindListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D7E1C9FDA870088F614 /* SearchBindListViewController.m */; };
+		A5EF8D821C9FDEFB0088F614 /* 1_pri.key in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8D801C9FDEFB0088F614 /* 1_pri.key */; };
+		A5EF8D831C9FDEFB0088F614 /* 1_pub.key in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8D811C9FDEFB0088F614 /* 1_pub.key */; };
+		A5EF8D8C1C9FE6360088F614 /* DebitCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D8B1C9FE6360088F614 /* DebitCardViewController.m */; };
+		A5EF8D8F1C9FE6440088F614 /* SmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D8E1C9FE6440088F614 /* SmsViewController.m */; };
+		A5EF8D921C9FE64C0088F614 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D911C9FE64C0088F614 /* PayViewController.m */; };
+		A5EF8D951C9FE9CA0088F614 /* PartColorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D941C9FE9CA0088F614 /* PartColorLabel.m */; };
+		A5EF8D981C9FE9E10088F614 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D971C9FE9E10088F614 /* CardView.m */; };
+		A5EF8D9B1C9FE9FB0088F614 /* ProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8D9A1C9FE9FB0088F614 /* ProtocolViewController.m */; };
+		A5EF8D9F1C9FEBFD0088F614 /* cardType.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8D9C1C9FEBFD0088F614 /* cardType.png */; };
+		A5EF8DA01C9FEBFD0088F614 /* isRead_selectedButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8D9D1C9FEBFD0088F614 /* isRead_selectedButton@2x.png */; };
+		A5EF8DA11C9FEBFD0088F614 /* isRead_waiting_selectButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8D9E1C9FEBFD0088F614 /* isRead_waiting_selectButton@2x.png */; };
+		A5EF8DA41C9FF57A0088F614 /* MoneyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EF8DA31C9FF57A0088F614 /* MoneyView.m */; };
+		A5EF8DA61C9FF8F50088F614 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8DA51C9FF8F50088F614 /* down.png */; };
+		A5EF8DA81CA000680088F614 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8DA71CA000680088F614 /* right.png */; };
+		A5EF8DAA1CA0022E0088F614 /* ABC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EF8DA91CA0022E0088F614 /* ABC.png */; };
+		A5EFCB2B1CAB6CD900F826D0 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EFCB2A1CAB6CD900F826D0 /* add.png */; };
+		A5EFCB2D1CAB6CDD00F826D0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = A5EFCB2C1CAB6CDD00F826D0 /* close.png */; };
+		A5EFCB721CABA81D00F826D0 /* VerifyExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EFCB711CABA81D00F826D0 /* VerifyExpression.m */; };
+		A5F0A9D01CAA2E9C006C8554 /* bank_ BOB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9BF1CAA2E9C006C8554 /* bank_ BOB.png */; };
+		A5F0A9D11CAA2E9C006C8554 /* bank_ CMB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C01CAA2E9C006C8554 /* bank_ CMB.png */; };
+		A5F0A9D21CAA2E9C006C8554 /* bank_ CMBC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C11CAA2E9C006C8554 /* bank_ CMBC.png */; };
+		A5F0A9D31CAA2E9C006C8554 /* bank_ HXB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C21CAA2E9C006C8554 /* bank_ HXB.png */; };
+		A5F0A9D41CAA2E9C006C8554 /* bank_ABC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C31CAA2E9C006C8554 /* bank_ABC.png */; };
+		A5F0A9D51CAA2E9C006C8554 /* bank_BOCM.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C41CAA2E9C006C8554 /* bank_BOCM.png */; };
+		A5F0A9D61CAA2E9C006C8554 /* bank_CCB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C51CAA2E9C006C8554 /* bank_CCB.png */; };
+		A5F0A9D71CAA2E9C006C8554 /* bank_CEB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C61CAA2E9C006C8554 /* bank_CEB.png */; };
+		A5F0A9D81CAA2E9C006C8554 /* bank_CGB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C71CAA2E9C006C8554 /* bank_CGB.png */; };
+		A5F0A9D91CAA2E9C006C8554 /* bank_CIB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C81CAA2E9C006C8554 /* bank_CIB.png */; };
+		A5F0A9DA1CAA2E9C006C8554 /* bank_CITIC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9C91CAA2E9C006C8554 /* bank_CITIC.png */; };
+		A5F0A9DB1CAA2E9C006C8554 /* bank_CMB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CA1CAA2E9C006C8554 /* bank_CMB.png */; };
+		A5F0A9DC1CAA2E9C006C8554 /* bank_ICBC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CB1CAA2E9C006C8554 /* bank_ICBC.png */; };
+		A5F0A9DD1CAA2E9C006C8554 /* bank_PAYH.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CC1CAA2E9C006C8554 /* bank_PAYH.png */; };
+		A5F0A9DE1CAA2E9C006C8554 /* bank_PSBC.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CD1CAA2E9C006C8554 /* bank_PSBC.png */; };
+		A5F0A9DF1CAA2E9C006C8554 /* bank_SHBANK.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CE1CAA2E9C006C8554 /* bank_SHBANK.png */; };
+		A5F0A9E01CAA2E9C006C8554 /* bank_SPDB.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9CF1CAA2E9C006C8554 /* bank_SPDB.png */; };
+		A5F0A9F61CAA5AE4006C8554 /* aboutPhoneNo.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E21CAA5AE4006C8554 /* aboutPhoneNo.png */; };
+		A5F0A9F71CAA5AE4006C8554 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E31CAA5AE4006C8554 /* backArrow.png */; };
+		A5F0A9F81CAA5AE4006C8554 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E41CAA5AE4006C8554 /* bg.png */; };
+		A5F0A9F91CAA5AE4006C8554 /* buttons_03.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E51CAA5AE4006C8554 /* buttons_03.png */; };
+		A5F0A9FA1CAA5AE4006C8554 /* buttons_05.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E61CAA5AE4006C8554 /* buttons_05.png */; };
+		A5F0A9FB1CAA5AE4006C8554 /* buttons_08.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E71CAA5AE4006C8554 /* buttons_08.png */; };
+		A5F0A9FC1CAA5AE4006C8554 /* buttons_13.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E81CAA5AE4006C8554 /* buttons_13.png */; };
+		A5F0A9FD1CAA5AE4006C8554 /* buttons_16.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9E91CAA5AE4006C8554 /* buttons_16.png */; };
+		A5F0A9FE1CAA5AE4006C8554 /* buttons_18.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9EA1CAA5AE4006C8554 /* buttons_18.png */; };
+		A5F0A9FF1CAA5AE4006C8554 /* buttons_20.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9EB1CAA5AE4006C8554 /* buttons_20.png */; };
+		A5F0AA001CAA5AE4006C8554 /* buttons_22.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9EC1CAA5AE4006C8554 /* buttons_22.png */; };
+		A5F0AA011CAA5AE4006C8554 /* buttons_24.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9ED1CAA5AE4006C8554 /* buttons_24.png */; };
+		A5F0AA021CAA5AE4006C8554 /* buttons_26.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9EE1CAA5AE4006C8554 /* buttons_26.png */; };
+		A5F0AA031CAA5AE4006C8554 /* buttons_28.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9EF1CAA5AE4006C8554 /* buttons_28.png */; };
+		A5F0AA041CAA5AE4006C8554 /* changeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F01CAA5AE4006C8554 /* changeIcon.png */; };
+		A5F0AA051CAA5AE4006C8554 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F11CAA5AE4006C8554 /* downArrow.png */; };
+		A5F0AA061CAA5AE4006C8554 /* pay_way_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F21CAA5AE4006C8554 /* pay_way_arrow.png */; };
+		A5F0AA071CAA5AE4006C8554 /* pay_way_fast_pay_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F31CAA5AE4006C8554 /* pay_way_fast_pay_icon.png */; };
+		A5F0AA081CAA5AE4006C8554 /* pay_way_NFC_pay_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F41CAA5AE4006C8554 /* pay_way_NFC_pay_icon.png */; };
+		A5F0AA091CAA5AE4006C8554 /* upArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0A9F51CAA5AE4006C8554 /* upArrow.png */; };
+		A5F0AA0B1CAA65C3006C8554 /* changeIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F0AA0A1CAA65C3006C8554 /* changeIcon1.png */; };
+		A5F0AA0E1CAA8584006C8554 /* CustomNavigationbar.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F0AA0D1CAA8584006C8554 /* CustomNavigationbar.m */; };
+		A5F0AA111CAA8877006C8554 /* BindPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F0AA101CAA8877006C8554 /* BindPayViewController.m */; };
+		A5F0AA141CAA9190006C8554 /* CardInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F0AA131CAA9190006C8554 /* CardInfoCell.m */; };
+		A5F3FB071CA397A600DAD924 /* navigationbar.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F3FB061CA397A600DAD924 /* navigationbar.png */; };
+		A5F3FB0A1CA39BF700DAD924 /* ParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F3FB091CA39BF700DAD924 /* ParentViewController.m */; };
+		A5F4C3BC1CA3F18300A36A48 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A5F4C3BB1CA3F18300A36A48 /* back.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5EF8CB81C9FD6A20088F614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5EF8C961C9FD6A20088F614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5EF8C9D1C9FD6A20088F614;
+			remoteInfo = ReapalSDKDemo;
+		};
+		A5EF8CC31C9FD6A20088F614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5EF8C961C9FD6A20088F614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5EF8C9D1C9FD6A20088F614;
+			remoteInfo = ReapalSDKDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A5612B9D1CA90DE600C22D2A /* GoodsOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsOrder.h; sourceTree = "<group>"; };
+		A5612B9E1CA90DE600C22D2A /* GoodsOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsOrder.m; sourceTree = "<group>"; };
+		A5612BA11CA90DE600C22D2A /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		A5612BA21CA90DE600C22D2A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		A5612BA31CA90DE600C22D2A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A5612BA51CA90DE600C22D2A /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		A5612BA61CA90DE600C22D2A /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
+		A5612BA71CA90DE600C22D2A /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
+		A5612BA81CA90DE600C22D2A /* asn1t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1t.h; sourceTree = "<group>"; };
+		A5612BA91CA90DE600C22D2A /* bio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bio.h; sourceTree = "<group>"; };
+		A5612BAA1CA90DE600C22D2A /* blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blowfish.h; sourceTree = "<group>"; };
+		A5612BAB1CA90DE600C22D2A /* bn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bn.h; sourceTree = "<group>"; };
+		A5612BAC1CA90DE600C22D2A /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		A5612BAD1CA90DE600C22D2A /* camellia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camellia.h; sourceTree = "<group>"; };
+		A5612BAE1CA90DE600C22D2A /* cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cast.h; sourceTree = "<group>"; };
+		A5612BAF1CA90DE600C22D2A /* cmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmac.h; sourceTree = "<group>"; };
+		A5612BB01CA90DE600C22D2A /* cms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cms.h; sourceTree = "<group>"; };
+		A5612BB11CA90DE600C22D2A /* comp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = comp.h; sourceTree = "<group>"; };
+		A5612BB21CA90DE600C22D2A /* conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf.h; sourceTree = "<group>"; };
+		A5612BB31CA90DE600C22D2A /* conf_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = conf_api.h; sourceTree = "<group>"; };
+		A5612BB41CA90DE600C22D2A /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		A5612BB51CA90DE600C22D2A /* des.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des.h; sourceTree = "<group>"; };
+		A5612BB61CA90DE600C22D2A /* des_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = des_old.h; sourceTree = "<group>"; };
+		A5612BB71CA90DE600C22D2A /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
+		A5612BB81CA90DE600C22D2A /* dsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsa.h; sourceTree = "<group>"; };
+		A5612BB91CA90DE600C22D2A /* dso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dso.h; sourceTree = "<group>"; };
+		A5612BBA1CA90DE600C22D2A /* dtls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dtls1.h; sourceTree = "<group>"; };
+		A5612BBB1CA90DE600C22D2A /* e_os2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = e_os2.h; sourceTree = "<group>"; };
+		A5612BBC1CA90DE600C22D2A /* ebcdic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ebcdic.h; sourceTree = "<group>"; };
+		A5612BBD1CA90DE600C22D2A /* ec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ec.h; sourceTree = "<group>"; };
+		A5612BBE1CA90DE600C22D2A /* ecdh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdh.h; sourceTree = "<group>"; };
+		A5612BBF1CA90DE600C22D2A /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
+		A5612BC01CA90DE600C22D2A /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
+		A5612BC11CA90DE600C22D2A /* err.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = err.h; sourceTree = "<group>"; };
+		A5612BC21CA90DE600C22D2A /* evp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = evp.h; sourceTree = "<group>"; };
+		A5612BC31CA90DE600C22D2A /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		A5612BC41CA90DE600C22D2A /* idea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idea.h; sourceTree = "<group>"; };
+		A5612BC51CA90DE600C22D2A /* krb5_asn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = krb5_asn.h; sourceTree = "<group>"; };
+		A5612BC61CA90DE600C22D2A /* kssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kssl.h; sourceTree = "<group>"; };
+		A5612BC71CA90DE600C22D2A /* lhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhash.h; sourceTree = "<group>"; };
+		A5612BC81CA90DE600C22D2A /* md4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md4.h; sourceTree = "<group>"; };
+		A5612BC91CA90DE600C22D2A /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		A5612BCA1CA90DE600C22D2A /* mdc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdc2.h; sourceTree = "<group>"; };
+		A5612BCB1CA90DE600C22D2A /* modes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = modes.h; sourceTree = "<group>"; };
+		A5612BCC1CA90DE600C22D2A /* obj_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj_mac.h; sourceTree = "<group>"; };
+		A5612BCD1CA90DE600C22D2A /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
+		A5612BCE1CA90DE600C22D2A /* ocsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ocsp.h; sourceTree = "<group>"; };
+		A5612BCF1CA90DE600C22D2A /* opensslconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslconf.h; sourceTree = "<group>"; };
+		A5612BD01CA90DE600C22D2A /* opensslv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opensslv.h; sourceTree = "<group>"; };
+		A5612BD11CA90DE600C22D2A /* ossl_typ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ossl_typ.h; sourceTree = "<group>"; };
+		A5612BD21CA90DE600C22D2A /* pem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem.h; sourceTree = "<group>"; };
+		A5612BD31CA90DE600C22D2A /* pem2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pem2.h; sourceTree = "<group>"; };
+		A5612BD41CA90DE600C22D2A /* pkcs12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs12.h; sourceTree = "<group>"; };
+		A5612BD51CA90DE600C22D2A /* pkcs7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkcs7.h; sourceTree = "<group>"; };
+		A5612BD61CA90DE600C22D2A /* pqueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pqueue.h; sourceTree = "<group>"; };
+		A5612BD71CA90DE600C22D2A /* rand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rand.h; sourceTree = "<group>"; };
+		A5612BD81CA90DE600C22D2A /* rc2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc2.h; sourceTree = "<group>"; };
+		A5612BD91CA90DE600C22D2A /* rc4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rc4.h; sourceTree = "<group>"; };
+		A5612BDA1CA90DE600C22D2A /* ripemd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ripemd.h; sourceTree = "<group>"; };
+		A5612BDB1CA90DE600C22D2A /* rsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rsa.h; sourceTree = "<group>"; };
+		A5612BDC1CA90DE600C22D2A /* safestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = safestack.h; sourceTree = "<group>"; };
+		A5612BDD1CA90DE600C22D2A /* seed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = seed.h; sourceTree = "<group>"; };
+		A5612BDE1CA90DE600C22D2A /* sha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha.h; sourceTree = "<group>"; };
+		A5612BDF1CA90DE600C22D2A /* srp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srp.h; sourceTree = "<group>"; };
+		A5612BE01CA90DE600C22D2A /* srtp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = srtp.h; sourceTree = "<group>"; };
+		A5612BE11CA90DE600C22D2A /* ssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl.h; sourceTree = "<group>"; };
+		A5612BE21CA90DE600C22D2A /* ssl2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl2.h; sourceTree = "<group>"; };
+		A5612BE31CA90DE600C22D2A /* ssl23.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl23.h; sourceTree = "<group>"; };
+		A5612BE41CA90DE600C22D2A /* ssl3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ssl3.h; sourceTree = "<group>"; };
+		A5612BE51CA90DE600C22D2A /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stack.h; sourceTree = "<group>"; };
+		A5612BE61CA90DE600C22D2A /* symhacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symhacks.h; sourceTree = "<group>"; };
+		A5612BE71CA90DE600C22D2A /* tls1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tls1.h; sourceTree = "<group>"; };
+		A5612BE81CA90DE600C22D2A /* ts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ts.h; sourceTree = "<group>"; };
+		A5612BE91CA90DE600C22D2A /* txt_db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = txt_db.h; sourceTree = "<group>"; };
+		A5612BEA1CA90DE600C22D2A /* ui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		A5612BEB1CA90DE600C22D2A /* ui_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ui_compat.h; sourceTree = "<group>"; };
+		A5612BEC1CA90DE600C22D2A /* whrlpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whrlpool.h; sourceTree = "<group>"; };
+		A5612BED1CA90DE600C22D2A /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
+		A5612BEE1CA90DE600C22D2A /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
+		A5612BEF1CA90DE600C22D2A /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
+		A5612BF01CA90DE600C22D2A /* ReapalUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReapalUtil.h; sourceTree = "<group>"; };
+		A5612BF11CA90DE600C22D2A /* ReapalUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReapalUtil.m; sourceTree = "<group>"; };
+		A5612BF31CA90DE600C22D2A /* AESHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESHandler.h; sourceTree = "<group>"; };
+		A5612BF41CA90DE600C22D2A /* AESHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESHandler.m; sourceTree = "<group>"; };
+		A5612BF61CA90DE600C22D2A /* Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrypt.h; sourceTree = "<group>"; };
+		A5612BF71CA90DE600C22D2A /* Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypt.m; sourceTree = "<group>"; };
+		A5612BF81CA90DE600C22D2A /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		A5612BF91CA90DE600C22D2A /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		A5612BFA1CA90DE600C22D2A /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		A5612BFB1CA90DE600C22D2A /* RSAHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAHandler.h; sourceTree = "<group>"; };
+		A5612BFC1CA90DE600C22D2A /* RSAHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAHandler.m; sourceTree = "<group>"; };
+		A5612BFE1CA90DE600C22D2A /* ReapalSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReapalSdk.h; sourceTree = "<group>"; };
+		A5612BFF1CA90DE600C22D2A /* ReapalSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReapalSdk.m; sourceTree = "<group>"; };
+		A5612C0A1CA9132500C22D2A /* ReapalApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReapalApp.h; sourceTree = "<group>"; };
+		A5612C0B1CA9132500C22D2A /* ReapalApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReapalApp.m; sourceTree = "<group>"; };
+		A5612C0D1CA918ED00C22D2A /* CreditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditViewController.h; sourceTree = "<group>"; };
+		A5612C0E1CA918ED00C22D2A /* CreditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditViewController.m; sourceTree = "<group>"; };
+		A5612C101CA91AC700C22D2A /* GetTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetTime.h; sourceTree = "<group>"; };
+		A5612C111CA91AC700C22D2A /* GetTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTime.m; sourceTree = "<group>"; };
+		A5612C131CA9210500C22D2A /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		A5612C141CA9210500C22D2A /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		A5EF8C9E1C9FD6A20088F614 /* ReapalSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReapalSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EF8CA21C9FD6A20088F614 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5EF8CA41C9FD6A20088F614 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A5EF8CA51C9FD6A20088F614 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A5EF8CA71C9FD6A20088F614 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A5EF8CA81C9FD6A20088F614 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A5EF8CAB1C9FD6A20088F614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5EF8CAD1C9FD6A20088F614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5EF8CB01C9FD6A20088F614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5EF8CB21C9FD6A20088F614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EF8CB71C9FD6A20088F614 /* ReapalSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReapalSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EF8CBB1C9FD6A20088F614 /* ReapalSDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReapalSDKDemoTests.m; sourceTree = "<group>"; };
+		A5EF8CBD1C9FD6A20088F614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EF8CC21C9FD6A20088F614 /* ReapalSDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReapalSDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5EF8CC61C9FD6A20088F614 /* ReapalSDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReapalSDKDemoUITests.m; sourceTree = "<group>"; };
+		A5EF8CC81C9FD6A20088F614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EF8D791C9FD90F0088F614 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A5EF8D7D1C9FDA870088F614 /* SearchBindListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBindListViewController.h; sourceTree = "<group>"; };
+		A5EF8D7E1C9FDA870088F614 /* SearchBindListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBindListViewController.m; sourceTree = "<group>"; };
+		A5EF8D801C9FDEFB0088F614 /* 1_pri.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1_pri.key; sourceTree = "<group>"; };
+		A5EF8D811C9FDEFB0088F614 /* 1_pub.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1_pub.key; sourceTree = "<group>"; };
+		A5EF8D8A1C9FE6360088F614 /* DebitCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebitCardViewController.h; sourceTree = "<group>"; };
+		A5EF8D8B1C9FE6360088F614 /* DebitCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebitCardViewController.m; sourceTree = "<group>"; };
+		A5EF8D8D1C9FE6440088F614 /* SmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmsViewController.h; sourceTree = "<group>"; };
+		A5EF8D8E1C9FE6440088F614 /* SmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmsViewController.m; sourceTree = "<group>"; };
+		A5EF8D901C9FE64C0088F614 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
+		A5EF8D911C9FE64C0088F614 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
+		A5EF8D931C9FE9CA0088F614 /* PartColorLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartColorLabel.h; sourceTree = "<group>"; };
+		A5EF8D941C9FE9CA0088F614 /* PartColorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartColorLabel.m; sourceTree = "<group>"; };
+		A5EF8D961C9FE9E10088F614 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		A5EF8D971C9FE9E10088F614 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		A5EF8D991C9FE9FB0088F614 /* ProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolViewController.h; sourceTree = "<group>"; };
+		A5EF8D9A1C9FE9FB0088F614 /* ProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolViewController.m; sourceTree = "<group>"; };
+		A5EF8D9C1C9FEBFD0088F614 /* cardType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardType.png; sourceTree = "<group>"; };
+		A5EF8D9D1C9FEBFD0088F614 /* isRead_selectedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "isRead_selectedButton@2x.png"; sourceTree = "<group>"; };
+		A5EF8D9E1C9FEBFD0088F614 /* isRead_waiting_selectButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "isRead_waiting_selectButton@2x.png"; sourceTree = "<group>"; };
+		A5EF8DA21C9FF57A0088F614 /* MoneyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyView.h; sourceTree = "<group>"; };
+		A5EF8DA31C9FF57A0088F614 /* MoneyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyView.m; sourceTree = "<group>"; };
+		A5EF8DA51C9FF8F50088F614 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		A5EF8DA71CA000680088F614 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		A5EF8DA91CA0022E0088F614 /* ABC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ABC.png; sourceTree = "<group>"; };
+		A5EFCB2A1CAB6CD900F826D0 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		A5EFCB2C1CAB6CDD00F826D0 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		A5EFCB701CABA81D00F826D0 /* VerifyExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyExpression.h; sourceTree = "<group>"; };
+		A5EFCB711CABA81D00F826D0 /* VerifyExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyExpression.m; sourceTree = "<group>"; };
+		A5F0A9BF1CAA2E9C006C8554 /* bank_ BOB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_ BOB.png"; sourceTree = "<group>"; };
+		A5F0A9C01CAA2E9C006C8554 /* bank_ CMB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_ CMB.png"; sourceTree = "<group>"; };
+		A5F0A9C11CAA2E9C006C8554 /* bank_ CMBC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_ CMBC.png"; sourceTree = "<group>"; };
+		A5F0A9C21CAA2E9C006C8554 /* bank_ HXB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bank_ HXB.png"; sourceTree = "<group>"; };
+		A5F0A9C31CAA2E9C006C8554 /* bank_ABC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_ABC.png; sourceTree = "<group>"; };
+		A5F0A9C41CAA2E9C006C8554 /* bank_BOCM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_BOCM.png; sourceTree = "<group>"; };
+		A5F0A9C51CAA2E9C006C8554 /* bank_CCB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CCB.png; sourceTree = "<group>"; };
+		A5F0A9C61CAA2E9C006C8554 /* bank_CEB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CEB.png; sourceTree = "<group>"; };
+		A5F0A9C71CAA2E9C006C8554 /* bank_CGB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CGB.png; sourceTree = "<group>"; };
+		A5F0A9C81CAA2E9C006C8554 /* bank_CIB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CIB.png; sourceTree = "<group>"; };
+		A5F0A9C91CAA2E9C006C8554 /* bank_CITIC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CITIC.png; sourceTree = "<group>"; };
+		A5F0A9CA1CAA2E9C006C8554 /* bank_CMB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_CMB.png; sourceTree = "<group>"; };
+		A5F0A9CB1CAA2E9C006C8554 /* bank_ICBC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_ICBC.png; sourceTree = "<group>"; };
+		A5F0A9CC1CAA2E9C006C8554 /* bank_PAYH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_PAYH.png; sourceTree = "<group>"; };
+		A5F0A9CD1CAA2E9C006C8554 /* bank_PSBC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_PSBC.png; sourceTree = "<group>"; };
+		A5F0A9CE1CAA2E9C006C8554 /* bank_SHBANK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_SHBANK.png; sourceTree = "<group>"; };
+		A5F0A9CF1CAA2E9C006C8554 /* bank_SPDB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bank_SPDB.png; sourceTree = "<group>"; };
+		A5F0A9E21CAA5AE4006C8554 /* aboutPhoneNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutPhoneNo.png; sourceTree = "<group>"; };
+		A5F0A9E31CAA5AE4006C8554 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		A5F0A9E41CAA5AE4006C8554 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		A5F0A9E51CAA5AE4006C8554 /* buttons_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_03.png; sourceTree = "<group>"; };
+		A5F0A9E61CAA5AE4006C8554 /* buttons_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_05.png; sourceTree = "<group>"; };
+		A5F0A9E71CAA5AE4006C8554 /* buttons_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_08.png; sourceTree = "<group>"; };
+		A5F0A9E81CAA5AE4006C8554 /* buttons_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_13.png; sourceTree = "<group>"; };
+		A5F0A9E91CAA5AE4006C8554 /* buttons_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_16.png; sourceTree = "<group>"; };
+		A5F0A9EA1CAA5AE4006C8554 /* buttons_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_18.png; sourceTree = "<group>"; };
+		A5F0A9EB1CAA5AE4006C8554 /* buttons_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_20.png; sourceTree = "<group>"; };
+		A5F0A9EC1CAA5AE4006C8554 /* buttons_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_22.png; sourceTree = "<group>"; };
+		A5F0A9ED1CAA5AE4006C8554 /* buttons_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_24.png; sourceTree = "<group>"; };
+		A5F0A9EE1CAA5AE4006C8554 /* buttons_26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_26.png; sourceTree = "<group>"; };
+		A5F0A9EF1CAA5AE4006C8554 /* buttons_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttons_28.png; sourceTree = "<group>"; };
+		A5F0A9F01CAA5AE4006C8554 /* changeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = changeIcon.png; sourceTree = "<group>"; };
+		A5F0A9F11CAA5AE4006C8554 /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		A5F0A9F21CAA5AE4006C8554 /* pay_way_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay_way_arrow.png; sourceTree = "<group>"; };
+		A5F0A9F31CAA5AE4006C8554 /* pay_way_fast_pay_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay_way_fast_pay_icon.png; sourceTree = "<group>"; };
+		A5F0A9F41CAA5AE4006C8554 /* pay_way_NFC_pay_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pay_way_NFC_pay_icon.png; sourceTree = "<group>"; };
+		A5F0A9F51CAA5AE4006C8554 /* upArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrow.png; sourceTree = "<group>"; };
+		A5F0AA0A1CAA65C3006C8554 /* changeIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = changeIcon1.png; path = ../bank/changeIcon1.png; sourceTree = "<group>"; };
+		A5F0AA0C1CAA8584006C8554 /* CustomNavigationbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationbar.h; sourceTree = "<group>"; };
+		A5F0AA0D1CAA8584006C8554 /* CustomNavigationbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationbar.m; sourceTree = "<group>"; };
+		A5F0AA0F1CAA8877006C8554 /* BindPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindPayViewController.h; sourceTree = "<group>"; };
+		A5F0AA101CAA8877006C8554 /* BindPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindPayViewController.m; sourceTree = "<group>"; };
+		A5F0AA121CAA9190006C8554 /* CardInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfoCell.h; sourceTree = "<group>"; };
+		A5F0AA131CAA9190006C8554 /* CardInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfoCell.m; sourceTree = "<group>"; };
+		A5F3FB061CA397A600DAD924 /* navigationbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar.png; sourceTree = "<group>"; };
+		A5F3FB081CA39BF700DAD924 /* ParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentViewController.h; sourceTree = "<group>"; };
+		A5F3FB091CA39BF700DAD924 /* ParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentViewController.m; sourceTree = "<group>"; };
+		A5F4C3BB1CA3F18300A36A48 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5EF8C9B1C9FD6A20088F614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5612C021CA90DE600C22D2A /* libssl.a in Frameworks */,
+				A5612C011CA90DE600C22D2A /* libcrypto.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CB41C9FD6A20088F614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CBF1C9FD6A20088F614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5612B9B1CA90DE600C22D2A /* ReapalPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				A5612B9C1CA90DE600C22D2A /* PublicUtil */,
+				A5612BFD1CA90DE600C22D2A /* ReapalSDK */,
+			);
+			path = ReapalPaySDK;
+			sourceTree = "<group>";
+		};
+		A5612B9C1CA90DE600C22D2A /* PublicUtil */ = {
+			isa = PBXGroup;
+			children = (
+				A5612B9D1CA90DE600C22D2A /* GoodsOrder.h */,
+				A5612B9E1CA90DE600C22D2A /* GoodsOrder.m */,
+				A5612B9F1CA90DE600C22D2A /* openssl */,
+				A5612BF01CA90DE600C22D2A /* ReapalUtil.h */,
+				A5612BF11CA90DE600C22D2A /* ReapalUtil.m */,
+				A5EFCB701CABA81D00F826D0 /* VerifyExpression.h */,
+				A5EFCB711CABA81D00F826D0 /* VerifyExpression.m */,
+				A5612BF21CA90DE600C22D2A /* util */,
+			);
+			path = PublicUtil;
+			sourceTree = "<group>";
+		};
+		A5612B9F1CA90DE600C22D2A /* openssl */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BA01CA90DE600C22D2A /* include */,
+			);
+			path = openssl;
+			sourceTree = "<group>";
+		};
+		A5612BA01CA90DE600C22D2A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BA11CA90DE600C22D2A /* libcrypto.a */,
+				A5612BA21CA90DE600C22D2A /* libssl.a */,
+				A5612BA31CA90DE600C22D2A /* LICENSE */,
+				A5612BA41CA90DE600C22D2A /* openssl */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A5612BA41CA90DE600C22D2A /* openssl */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BA51CA90DE600C22D2A /* aes.h */,
+				A5612BA61CA90DE600C22D2A /* asn1.h */,
+				A5612BA71CA90DE600C22D2A /* asn1_mac.h */,
+				A5612BA81CA90DE600C22D2A /* asn1t.h */,
+				A5612BA91CA90DE600C22D2A /* bio.h */,
+				A5612BAA1CA90DE600C22D2A /* blowfish.h */,
+				A5612BAB1CA90DE600C22D2A /* bn.h */,
+				A5612BAC1CA90DE600C22D2A /* buffer.h */,
+				A5612BAD1CA90DE600C22D2A /* camellia.h */,
+				A5612BAE1CA90DE600C22D2A /* cast.h */,
+				A5612BAF1CA90DE600C22D2A /* cmac.h */,
+				A5612BB01CA90DE600C22D2A /* cms.h */,
+				A5612BB11CA90DE600C22D2A /* comp.h */,
+				A5612BB21CA90DE600C22D2A /* conf.h */,
+				A5612BB31CA90DE600C22D2A /* conf_api.h */,
+				A5612BB41CA90DE600C22D2A /* crypto.h */,
+				A5612BB51CA90DE600C22D2A /* des.h */,
+				A5612BB61CA90DE600C22D2A /* des_old.h */,
+				A5612BB71CA90DE600C22D2A /* dh.h */,
+				A5612BB81CA90DE600C22D2A /* dsa.h */,
+				A5612BB91CA90DE600C22D2A /* dso.h */,
+				A5612BBA1CA90DE600C22D2A /* dtls1.h */,
+				A5612BBB1CA90DE600C22D2A /* e_os2.h */,
+				A5612BBC1CA90DE600C22D2A /* ebcdic.h */,
+				A5612BBD1CA90DE600C22D2A /* ec.h */,
+				A5612BBE1CA90DE600C22D2A /* ecdh.h */,
+				A5612BBF1CA90DE600C22D2A /* ecdsa.h */,
+				A5612BC01CA90DE600C22D2A /* engine.h */,
+				A5612BC11CA90DE600C22D2A /* err.h */,
+				A5612BC21CA90DE600C22D2A /* evp.h */,
+				A5612BC31CA90DE600C22D2A /* hmac.h */,
+				A5612BC41CA90DE600C22D2A /* idea.h */,
+				A5612BC51CA90DE600C22D2A /* krb5_asn.h */,
+				A5612BC61CA90DE600C22D2A /* kssl.h */,
+				A5612BC71CA90DE600C22D2A /* lhash.h */,
+				A5612BC81CA90DE600C22D2A /* md4.h */,
+				A5612BC91CA90DE600C22D2A /* md5.h */,
+				A5612BCA1CA90DE600C22D2A /* mdc2.h */,
+				A5612BCB1CA90DE600C22D2A /* modes.h */,
+				A5612BCC1CA90DE600C22D2A /* obj_mac.h */,
+				A5612BCD1CA90DE600C22D2A /* objects.h */,
+				A5612BCE1CA90DE600C22D2A /* ocsp.h */,
+				A5612BCF1CA90DE600C22D2A /* opensslconf.h */,
+				A5612BD01CA90DE600C22D2A /* opensslv.h */,
+				A5612BD11CA90DE600C22D2A /* ossl_typ.h */,
+				A5612BD21CA90DE600C22D2A /* pem.h */,
+				A5612BD31CA90DE600C22D2A /* pem2.h */,
+				A5612BD41CA90DE600C22D2A /* pkcs12.h */,
+				A5612BD51CA90DE600C22D2A /* pkcs7.h */,
+				A5612BD61CA90DE600C22D2A /* pqueue.h */,
+				A5612BD71CA90DE600C22D2A /* rand.h */,
+				A5612BD81CA90DE600C22D2A /* rc2.h */,
+				A5612BD91CA90DE600C22D2A /* rc4.h */,
+				A5612BDA1CA90DE600C22D2A /* ripemd.h */,
+				A5612BDB1CA90DE600C22D2A /* rsa.h */,
+				A5612BDC1CA90DE600C22D2A /* safestack.h */,
+				A5612BDD1CA90DE600C22D2A /* seed.h */,
+				A5612BDE1CA90DE600C22D2A /* sha.h */,
+				A5612BDF1CA90DE600C22D2A /* srp.h */,
+				A5612BE01CA90DE600C22D2A /* srtp.h */,
+				A5612BE11CA90DE600C22D2A /* ssl.h */,
+				A5612BE21CA90DE600C22D2A /* ssl2.h */,
+				A5612BE31CA90DE600C22D2A /* ssl23.h */,
+				A5612BE41CA90DE600C22D2A /* ssl3.h */,
+				A5612BE51CA90DE600C22D2A /* stack.h */,
+				A5612BE61CA90DE600C22D2A /* symhacks.h */,
+				A5612BE71CA90DE600C22D2A /* tls1.h */,
+				A5612BE81CA90DE600C22D2A /* ts.h */,
+				A5612BE91CA90DE600C22D2A /* txt_db.h */,
+				A5612BEA1CA90DE600C22D2A /* ui.h */,
+				A5612BEB1CA90DE600C22D2A /* ui_compat.h */,
+				A5612BEC1CA90DE600C22D2A /* whrlpool.h */,
+				A5612BED1CA90DE600C22D2A /* x509.h */,
+				A5612BEE1CA90DE600C22D2A /* x509_vfy.h */,
+				A5612BEF1CA90DE600C22D2A /* x509v3.h */,
+			);
+			path = openssl;
+			sourceTree = "<group>";
+		};
+		A5612BF21CA90DE600C22D2A /* util */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BF31CA90DE600C22D2A /* AESHandler.h */,
+				A5612BF41CA90DE600C22D2A /* AESHandler.m */,
+				A5612BF51CA90DE600C22D2A /* assist */,
+				A5612BFB1CA90DE600C22D2A /* RSAHandler.h */,
+				A5612BFC1CA90DE600C22D2A /* RSAHandler.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		A5612BF51CA90DE600C22D2A /* assist */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BF61CA90DE600C22D2A /* Encrypt.h */,
+				A5612BF71CA90DE600C22D2A /* Encrypt.m */,
+				A5612BF81CA90DE600C22D2A /* GTMBase64.h */,
+				A5612BF91CA90DE600C22D2A /* GTMBase64.m */,
+				A5612BFA1CA90DE600C22D2A /* GTMDefines.h */,
+			);
+			path = assist;
+			sourceTree = "<group>";
+		};
+		A5612BFD1CA90DE600C22D2A /* ReapalSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A5612BFE1CA90DE600C22D2A /* ReapalSdk.h */,
+				A5612BFF1CA90DE600C22D2A /* ReapalSdk.m */,
+				A5612C0A1CA9132500C22D2A /* ReapalApp.h */,
+				A5612C0B1CA9132500C22D2A /* ReapalApp.m */,
+			);
+			path = ReapalSDK;
+			sourceTree = "<group>";
+		};
+		A5EF8C951C9FD6A20088F614 = {
+			isa = PBXGroup;
+			children = (
+				A5612C101CA91AC700C22D2A /* GetTime.h */,
+				A5612C111CA91AC700C22D2A /* GetTime.m */,
+				A5612B9B1CA90DE600C22D2A /* ReapalPaySDK */,
+				A5EF8CD61C9FD7E00088F614 /* Resources */,
+				A5EF8CD51C9FD7D90088F614 /* MVC */,
+				A5EF8CD41C9FD7D20088F614 /* Custom */,
+				A5EF8CA01C9FD6A20088F614 /* ReapalSDKDemo */,
+				A5EF8CBA1C9FD6A20088F614 /* ReapalSDKDemoTests */,
+				A5EF8CC51C9FD6A20088F614 /* ReapalSDKDemoUITests */,
+				A5EF8C9F1C9FD6A20088F614 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5EF8C9F1C9FD6A20088F614 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8C9E1C9FD6A20088F614 /* ReapalSDKDemo.app */,
+				A5EF8CB71C9FD6A20088F614 /* ReapalSDKDemoTests.xctest */,
+				A5EF8CC21C9FD6A20088F614 /* ReapalSDKDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5EF8CA01C9FD6A20088F614 /* ReapalSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8CA41C9FD6A20088F614 /* AppDelegate.h */,
+				A5EF8CA51C9FD6A20088F614 /* AppDelegate.m */,
+				A5EF8CA71C9FD6A20088F614 /* ViewController.h */,
+				A5EF8CA81C9FD6A20088F614 /* ViewController.m */,
+				A5EF8D791C9FD90F0088F614 /* PrefixHeader.pch */,
+				A5EF8CAA1C9FD6A20088F614 /* Main.storyboard */,
+				A5EF8CAD1C9FD6A20088F614 /* Assets.xcassets */,
+				A5EF8CAF1C9FD6A20088F614 /* LaunchScreen.storyboard */,
+				A5EF8CB21C9FD6A20088F614 /* Info.plist */,
+				A5EF8CA11C9FD6A20088F614 /* Supporting Files */,
+			);
+			path = ReapalSDKDemo;
+			sourceTree = "<group>";
+		};
+		A5EF8CA11C9FD6A20088F614 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8CA21C9FD6A20088F614 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5EF8CBA1C9FD6A20088F614 /* ReapalSDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8CBB1C9FD6A20088F614 /* ReapalSDKDemoTests.m */,
+				A5EF8CBD1C9FD6A20088F614 /* Info.plist */,
+			);
+			path = ReapalSDKDemoTests;
+			sourceTree = "<group>";
+		};
+		A5EF8CC51C9FD6A20088F614 /* ReapalSDKDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8CC61C9FD6A20088F614 /* ReapalSDKDemoUITests.m */,
+				A5EF8CC81C9FD6A20088F614 /* Info.plist */,
+			);
+			path = ReapalSDKDemoUITests;
+			sourceTree = "<group>";
+		};
+		A5EF8CD41C9FD7D20088F614 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		A5EF8CD51C9FD7D90088F614 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8D7C1C9FDA3C0088F614 /* ViewController */,
+				A5EF8D7B1C9FDA360088F614 /* View */,
+				A5EF8D7A1C9FDA2E0088F614 /* Model */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		A5EF8CD61C9FD7E00088F614 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5F0A9E11CAA5AE4006C8554 /* images */,
+				A5F0A9BE1CAA2E9C006C8554 /* bank */,
+				A5F4C3BB1CA3F18300A36A48 /* back.png */,
+				A5F3FB061CA397A600DAD924 /* navigationbar.png */,
+				A5EF8DA91CA0022E0088F614 /* ABC.png */,
+				A5EF8DA71CA000680088F614 /* right.png */,
+				A5EF8DA51C9FF8F50088F614 /* down.png */,
+				A5EF8D801C9FDEFB0088F614 /* 1_pri.key */,
+				A5EF8D811C9FDEFB0088F614 /* 1_pub.key */,
+				A5EF8D9C1C9FEBFD0088F614 /* cardType.png */,
+				A5EF8D9D1C9FEBFD0088F614 /* isRead_selectedButton@2x.png */,
+				A5EF8D9E1C9FEBFD0088F614 /* isRead_waiting_selectButton@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5EF8D7A1C9FDA2E0088F614 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5EF8D7B1C9FDA360088F614 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8D931C9FE9CA0088F614 /* PartColorLabel.h */,
+				A5EF8D941C9FE9CA0088F614 /* PartColorLabel.m */,
+				A5EF8D961C9FE9E10088F614 /* CardView.h */,
+				A5EF8D971C9FE9E10088F614 /* CardView.m */,
+				A5EF8DA21C9FF57A0088F614 /* MoneyView.h */,
+				A5EF8DA31C9FF57A0088F614 /* MoneyView.m */,
+				A5F0AA0C1CAA8584006C8554 /* CustomNavigationbar.h */,
+				A5F0AA0D1CAA8584006C8554 /* CustomNavigationbar.m */,
+				A5F0AA121CAA9190006C8554 /* CardInfoCell.h */,
+				A5F0AA131CAA9190006C8554 /* CardInfoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5EF8D7C1C9FDA3C0088F614 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A5EF8D7D1C9FDA870088F614 /* SearchBindListViewController.h */,
+				A5EF8D7E1C9FDA870088F614 /* SearchBindListViewController.m */,
+				A5612C131CA9210500C22D2A /* CardViewController.h */,
+				A5612C141CA9210500C22D2A /* CardViewController.m */,
+				A5EF8D8A1C9FE6360088F614 /* DebitCardViewController.h */,
+				A5EF8D8B1C9FE6360088F614 /* DebitCardViewController.m */,
+				A5612C0D1CA918ED00C22D2A /* CreditViewController.h */,
+				A5612C0E1CA918ED00C22D2A /* CreditViewController.m */,
+				A5EF8D8D1C9FE6440088F614 /* SmsViewController.h */,
+				A5EF8D8E1C9FE6440088F614 /* SmsViewController.m */,
+				A5EF8D901C9FE64C0088F614 /* PayViewController.h */,
+				A5EF8D911C9FE64C0088F614 /* PayViewController.m */,
+				A5F0AA0F1CAA8877006C8554 /* BindPayViewController.h */,
+				A5F0AA101CAA8877006C8554 /* BindPayViewController.m */,
+				A5EF8D991C9FE9FB0088F614 /* ProtocolViewController.h */,
+				A5EF8D9A1C9FE9FB0088F614 /* ProtocolViewController.m */,
+				A5F3FB081CA39BF700DAD924 /* ParentViewController.h */,
+				A5F3FB091CA39BF700DAD924 /* ParentViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A5F0A9BE1CAA2E9C006C8554 /* bank */ = {
+			isa = PBXGroup;
+			children = (
+				A5F0A9BF1CAA2E9C006C8554 /* bank_ BOB.png */,
+				A5F0A9C01CAA2E9C006C8554 /* bank_ CMB.png */,
+				A5F0A9C11CAA2E9C006C8554 /* bank_ CMBC.png */,
+				A5F0A9C21CAA2E9C006C8554 /* bank_ HXB.png */,
+				A5F0A9C31CAA2E9C006C8554 /* bank_ABC.png */,
+				A5F0A9C41CAA2E9C006C8554 /* bank_BOCM.png */,
+				A5F0A9C51CAA2E9C006C8554 /* bank_CCB.png */,
+				A5F0A9C61CAA2E9C006C8554 /* bank_CEB.png */,
+				A5F0A9C71CAA2E9C006C8554 /* bank_CGB.png */,
+				A5F0A9C81CAA2E9C006C8554 /* bank_CIB.png */,
+				A5F0A9C91CAA2E9C006C8554 /* bank_CITIC.png */,
+				A5F0A9CA1CAA2E9C006C8554 /* bank_CMB.png */,
+				A5F0A9CB1CAA2E9C006C8554 /* bank_ICBC.png */,
+				A5F0A9CC1CAA2E9C006C8554 /* bank_PAYH.png */,
+				A5F0A9CD1CAA2E9C006C8554 /* bank_PSBC.png */,
+				A5F0A9CE1CAA2E9C006C8554 /* bank_SHBANK.png */,
+				A5F0A9CF1CAA2E9C006C8554 /* bank_SPDB.png */,
+			);
+			path = bank;
+			sourceTree = "<group>";
+		};
+		A5F0A9E11CAA5AE4006C8554 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A5EFCB2A1CAB6CD900F826D0 /* add.png */,
+				A5EFCB2C1CAB6CDD00F826D0 /* close.png */,
+				A5F0A9E21CAA5AE4006C8554 /* aboutPhoneNo.png */,
+				A5F0A9E31CAA5AE4006C8554 /* backArrow.png */,
+				A5F0A9E41CAA5AE4006C8554 /* bg.png */,
+				A5F0A9E51CAA5AE4006C8554 /* buttons_03.png */,
+				A5F0A9E61CAA5AE4006C8554 /* buttons_05.png */,
+				A5F0A9E71CAA5AE4006C8554 /* buttons_08.png */,
+				A5F0A9E81CAA5AE4006C8554 /* buttons_13.png */,
+				A5F0A9E91CAA5AE4006C8554 /* buttons_16.png */,
+				A5F0A9EA1CAA5AE4006C8554 /* buttons_18.png */,
+				A5F0A9EB1CAA5AE4006C8554 /* buttons_20.png */,
+				A5F0A9EC1CAA5AE4006C8554 /* buttons_22.png */,
+				A5F0A9ED1CAA5AE4006C8554 /* buttons_24.png */,
+				A5F0A9EE1CAA5AE4006C8554 /* buttons_26.png */,
+				A5F0A9EF1CAA5AE4006C8554 /* buttons_28.png */,
+				A5F0A9F01CAA5AE4006C8554 /* changeIcon.png */,
+				A5F0A9F11CAA5AE4006C8554 /* downArrow.png */,
+				A5F0A9F21CAA5AE4006C8554 /* pay_way_arrow.png */,
+				A5F0A9F31CAA5AE4006C8554 /* pay_way_fast_pay_icon.png */,
+				A5F0A9F41CAA5AE4006C8554 /* pay_way_NFC_pay_icon.png */,
+				A5F0A9F51CAA5AE4006C8554 /* upArrow.png */,
+				A5F0AA0A1CAA65C3006C8554 /* changeIcon1.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5EF8C9D1C9FD6A20088F614 /* ReapalSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EF8CCB1C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemo" */;
+			buildPhases = (
+				A5EF8C9A1C9FD6A20088F614 /* Sources */,
+				A5EF8C9B1C9FD6A20088F614 /* Frameworks */,
+				A5EF8C9C1C9FD6A20088F614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReapalSDKDemo;
+			productName = ReapalSDKDemo;
+			productReference = A5EF8C9E1C9FD6A20088F614 /* ReapalSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5EF8CB61C9FD6A20088F614 /* ReapalSDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EF8CCE1C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemoTests" */;
+			buildPhases = (
+				A5EF8CB31C9FD6A20088F614 /* Sources */,
+				A5EF8CB41C9FD6A20088F614 /* Frameworks */,
+				A5EF8CB51C9FD6A20088F614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5EF8CB91C9FD6A20088F614 /* PBXTargetDependency */,
+			);
+			name = ReapalSDKDemoTests;
+			productName = ReapalSDKDemoTests;
+			productReference = A5EF8CB71C9FD6A20088F614 /* ReapalSDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5EF8CC11C9FD6A20088F614 /* ReapalSDKDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5EF8CD11C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemoUITests" */;
+			buildPhases = (
+				A5EF8CBE1C9FD6A20088F614 /* Sources */,
+				A5EF8CBF1C9FD6A20088F614 /* Frameworks */,
+				A5EF8CC01C9FD6A20088F614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5EF8CC41C9FD6A20088F614 /* PBXTargetDependency */,
+			);
+			name = ReapalSDKDemoUITests;
+			productName = ReapalSDKDemoUITests;
+			productReference = A5EF8CC21C9FD6A20088F614 /* ReapalSDKDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5EF8C961C9FD6A20088F614 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = wanmeizty;
+				TargetAttributes = {
+					A5EF8C9D1C9FD6A20088F614 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					A5EF8CB61C9FD6A20088F614 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A5EF8C9D1C9FD6A20088F614;
+					};
+					A5EF8CC11C9FD6A20088F614 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A5EF8C9D1C9FD6A20088F614;
+					};
+				};
+			};
+			buildConfigurationList = A5EF8C991C9FD6A20088F614 /* Build configuration list for PBXProject "ReapalSDKDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5EF8C951C9FD6A20088F614;
+			productRefGroup = A5EF8C9F1C9FD6A20088F614 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5EF8C9D1C9FD6A20088F614 /* ReapalSDKDemo */,
+				A5EF8CB61C9FD6A20088F614 /* ReapalSDKDemoTests */,
+				A5EF8CC11C9FD6A20088F614 /* ReapalSDKDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5EF8C9C1C9FD6A20088F614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EFCB2D1CAB6CDD00F826D0 /* close.png in Resources */,
+				A5F0A9F71CAA5AE4006C8554 /* backArrow.png in Resources */,
+				A5F0AA011CAA5AE4006C8554 /* buttons_24.png in Resources */,
+				A5F0A9D51CAA2E9C006C8554 /* bank_BOCM.png in Resources */,
+				A5EF8CB11C9FD6A20088F614 /* LaunchScreen.storyboard in Resources */,
+				A5F3FB071CA397A600DAD924 /* navigationbar.png in Resources */,
+				A5F0A9F81CAA5AE4006C8554 /* bg.png in Resources */,
+				A5EF8CAE1C9FD6A20088F614 /* Assets.xcassets in Resources */,
+				A5EF8D831C9FDEFB0088F614 /* 1_pub.key in Resources */,
+				A5F0A9DE1CAA2E9C006C8554 /* bank_PSBC.png in Resources */,
+				A5F0A9FA1CAA5AE4006C8554 /* buttons_05.png in Resources */,
+				A5F0AA091CAA5AE4006C8554 /* upArrow.png in Resources */,
+				A5F0A9DA1CAA2E9C006C8554 /* bank_CITIC.png in Resources */,
+				A5F0A9FF1CAA5AE4006C8554 /* buttons_20.png in Resources */,
+				A5F0A9D01CAA2E9C006C8554 /* bank_ BOB.png in Resources */,
+				A5F0A9DC1CAA2E9C006C8554 /* bank_ICBC.png in Resources */,
+				A5F0AA071CAA5AE4006C8554 /* pay_way_fast_pay_icon.png in Resources */,
+				A5F0A9E01CAA2E9C006C8554 /* bank_SPDB.png in Resources */,
+				A5F0AA051CAA5AE4006C8554 /* downArrow.png in Resources */,
+				A5F0AA021CAA5AE4006C8554 /* buttons_26.png in Resources */,
+				A5F0A9D41CAA2E9C006C8554 /* bank_ABC.png in Resources */,
+				A5EF8D9F1C9FEBFD0088F614 /* cardType.png in Resources */,
+				A5EFCB2B1CAB6CD900F826D0 /* add.png in Resources */,
+				A5F0AA041CAA5AE4006C8554 /* changeIcon.png in Resources */,
+				A5F0A9D91CAA2E9C006C8554 /* bank_CIB.png in Resources */,
+				A5F0AA081CAA5AE4006C8554 /* pay_way_NFC_pay_icon.png in Resources */,
+				A5EF8DA01C9FEBFD0088F614 /* isRead_selectedButton@2x.png in Resources */,
+				A5F0A9D31CAA2E9C006C8554 /* bank_ HXB.png in Resources */,
+				A5F0A9FB1CAA5AE4006C8554 /* buttons_08.png in Resources */,
+				A5EF8DA61C9FF8F50088F614 /* down.png in Resources */,
+				A5EF8DAA1CA0022E0088F614 /* ABC.png in Resources */,
+				A5EF8DA81CA000680088F614 /* right.png in Resources */,
+				A5F0A9D21CAA2E9C006C8554 /* bank_ CMBC.png in Resources */,
+				A5F0A9FC1CAA5AE4006C8554 /* buttons_13.png in Resources */,
+				A5F0A9FE1CAA5AE4006C8554 /* buttons_18.png in Resources */,
+				A5F0A9D61CAA2E9C006C8554 /* bank_CCB.png in Resources */,
+				A5EF8CAC1C9FD6A20088F614 /* Main.storyboard in Resources */,
+				A5F0A9F61CAA5AE4006C8554 /* aboutPhoneNo.png in Resources */,
+				A5F0A9F91CAA5AE4006C8554 /* buttons_03.png in Resources */,
+				A5F0A9DF1CAA2E9C006C8554 /* bank_SHBANK.png in Resources */,
+				A5F0A9D71CAA2E9C006C8554 /* bank_CEB.png in Resources */,
+				A5F0AA031CAA5AE4006C8554 /* buttons_28.png in Resources */,
+				A5F0A9D81CAA2E9C006C8554 /* bank_CGB.png in Resources */,
+				A5612C031CA90DE600C22D2A /* LICENSE in Resources */,
+				A5F4C3BC1CA3F18300A36A48 /* back.png in Resources */,
+				A5F0AA061CAA5AE4006C8554 /* pay_way_arrow.png in Resources */,
+				A5F0A9DB1CAA2E9C006C8554 /* bank_CMB.png in Resources */,
+				A5F0A9D11CAA2E9C006C8554 /* bank_ CMB.png in Resources */,
+				A5F0AA001CAA5AE4006C8554 /* buttons_22.png in Resources */,
+				A5F0A9DD1CAA2E9C006C8554 /* bank_PAYH.png in Resources */,
+				A5EF8DA11C9FEBFD0088F614 /* isRead_waiting_selectButton@2x.png in Resources */,
+				A5EF8D821C9FDEFB0088F614 /* 1_pri.key in Resources */,
+				A5F0AA0B1CAA65C3006C8554 /* changeIcon1.png in Resources */,
+				A5F0A9FD1CAA5AE4006C8554 /* buttons_16.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CB51C9FD6A20088F614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CC01C9FD6A20088F614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5EF8C9A1C9FD6A20088F614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5612C091CA90DE600C22D2A /* ReapalSdk.m in Sources */,
+				A5F0AA141CAA9190006C8554 /* CardInfoCell.m in Sources */,
+				A5EF8D981C9FE9E10088F614 /* CardView.m in Sources */,
+				A5F0AA111CAA8877006C8554 /* BindPayViewController.m in Sources */,
+				A5612C081CA90DE600C22D2A /* RSAHandler.m in Sources */,
+				A5F3FB0A1CA39BF700DAD924 /* ParentViewController.m in Sources */,
+				A5612C151CA9210500C22D2A /* CardViewController.m in Sources */,
+				A5EF8D921C9FE64C0088F614 /* PayViewController.m in Sources */,
+				A5EF8D7F1C9FDA870088F614 /* SearchBindListViewController.m in Sources */,
+				A5EF8D951C9FE9CA0088F614 /* PartColorLabel.m in Sources */,
+				A5EF8CA91C9FD6A20088F614 /* ViewController.m in Sources */,
+				A5EF8CA61C9FD6A20088F614 /* AppDelegate.m in Sources */,
+				A5EF8DA41C9FF57A0088F614 /* MoneyView.m in Sources */,
+				A5612C051CA90DE600C22D2A /* AESHandler.m in Sources */,
+				A5612C061CA90DE600C22D2A /* Encrypt.m in Sources */,
+				A5612C041CA90DE600C22D2A /* ReapalUtil.m in Sources */,
+				A5EF8D8C1C9FE6360088F614 /* DebitCardViewController.m in Sources */,
+				A5EF8D9B1C9FE9FB0088F614 /* ProtocolViewController.m in Sources */,
+				A5F0AA0E1CAA8584006C8554 /* CustomNavigationbar.m in Sources */,
+				A5EF8CA31C9FD6A20088F614 /* main.m in Sources */,
+				A5612C0C1CA9132500C22D2A /* ReapalApp.m in Sources */,
+				A5612C0F1CA918ED00C22D2A /* CreditViewController.m in Sources */,
+				A5EFCB721CABA81D00F826D0 /* VerifyExpression.m in Sources */,
+				A5612C071CA90DE600C22D2A /* GTMBase64.m in Sources */,
+				A5EF8D8F1C9FE6440088F614 /* SmsViewController.m in Sources */,
+				A5612C001CA90DE600C22D2A /* GoodsOrder.m in Sources */,
+				A5612C121CA91AC700C22D2A /* GetTime.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CB31C9FD6A20088F614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EF8CBC1C9FD6A20088F614 /* ReapalSDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5EF8CBE1C9FD6A20088F614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EF8CC71C9FD6A20088F614 /* ReapalSDKDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5EF8CB91C9FD6A20088F614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5EF8C9D1C9FD6A20088F614 /* ReapalSDKDemo */;
+			targetProxy = A5EF8CB81C9FD6A20088F614 /* PBXContainerItemProxy */;
+		};
+		A5EF8CC41C9FD6A20088F614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5EF8C9D1C9FD6A20088F614 /* ReapalSDKDemo */;
+			targetProxy = A5EF8CC31C9FD6A20088F614 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A5EF8CAA1C9FD6A20088F614 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5EF8CAB1C9FD6A20088F614 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A5EF8CAF1C9FD6A20088F614 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5EF8CB01C9FD6A20088F614 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5EF8CC91C9FD6A20088F614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5EF8CCA1C9FD6A20088F614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A5EF8CCC1C9FD6A20088F614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ReapalSDKDemo/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ReapalPaySDK/PublicUtil/openssl/include";
+				INFOPLIST_FILE = ReapalSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ReapalPaySDK/PublicUtil/openssl/include",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A5EF8CCD1C9FD6A20088F614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ReapalSDKDemo/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/ReapalPaySDK/PublicUtil/openssl/include";
+				INFOPLIST_FILE = ReapalSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ReapalPaySDK/PublicUtil/openssl/include",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A5EF8CCF1C9FD6A20088F614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReapalSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReapalSDKDemo.app/ReapalSDKDemo";
+			};
+			name = Debug;
+		};
+		A5EF8CD01C9FD6A20088F614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ReapalSDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReapalSDKDemo.app/ReapalSDKDemo";
+			};
+			name = Release;
+		};
+		A5EF8CD21C9FD6A20088F614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReapalSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReapalSDKDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A5EF8CD31C9FD6A20088F614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ReapalSDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Reapal.ReapalSDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReapalSDKDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5EF8C991C9FD6A20088F614 /* Build configuration list for PBXProject "ReapalSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF8CC91C9FD6A20088F614 /* Debug */,
+				A5EF8CCA1C9FD6A20088F614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF8CCB1C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF8CCC1C9FD6A20088F614 /* Debug */,
+				A5EF8CCD1C9FD6A20088F614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF8CCE1C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF8CCF1C9FD6A20088F614 /* Debug */,
+				A5EF8CD01C9FD6A20088F614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5EF8CD11C9FD6A20088F614 /* Build configuration list for PBXNativeTarget "ReapalSDKDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5EF8CD21C9FD6A20088F614 /* Debug */,
+				A5EF8CD31C9FD6A20088F614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5EF8C961C9FD6A20088F614 /* Project object */;
+}

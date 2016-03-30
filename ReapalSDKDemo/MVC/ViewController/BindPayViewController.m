@@ -450,12 +450,7 @@
     goodOrder.cert_no = self.order.cert_no; //@"426754534534534545"; //self.order.card_no;
     goodOrder.phone = self.order.phone; // @"18314533172"; //self.order.phone;
     
-    //    goodOrder.cvv2 = [self.order.card_no substringFromIndex:self.order.card_no.length - 3];//@"417";
-    //
-    //    goodOrder.validthru = self.order.validthru; //@"0221";
     goodOrder.version = @"3.1.2";
-    
-    //    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809"; // 安全校验码
     
     NSString * calibrateKey = [self selectCalibrate:goodOrder.merchant_id];
     

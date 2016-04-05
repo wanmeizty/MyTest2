@@ -61,6 +61,22 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
 - (NSDictionary *)encodeOrder:(GoodsOrder *)goodsOrder andCalibratekey:(NSString *)calibrateKey;
 
 /**
+ *  还原订单参数
+ *
+ *  @param params 加密的字典
+ *
+ */
+- (GoodsOrder *)decryptWithParams:(NSDictionary *) params;
+
+/**
+ *  私钥加密订单参数
+ *
+ *  @param goodsOrder 加密的订单对象
+ *
+ */
+- (NSDictionary *)privateEncodeOrder:(GoodsOrder *)goodsOrder andCalibratekey:(NSString *)calibrateKey;
+
+/**
  *  RSA 公钥加密
  *
  *  @param encontent 加密的内容

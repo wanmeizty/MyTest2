@@ -17,7 +17,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIWebView * webView = [[UIWebView alloc] initWithFrame:GTRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height )];
+    
+    UIWebView * webView = [[UIWebView alloc] initWithFrame:GTRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+    
+    view.backgroundColor = [UIColor colorWithRed:53/255.0 green:52/255.0 blue:57/255.0 alpha:1];
+    
+    [webView addSubview:view];
+    
+    UIImageView * webImgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 12, 40, 40)];
+    webImgView.image = [UIImage imageNamed:@"buttons_05.png"];
+    
+    [view addSubview:webImgView];
+    webImgView.userInteractionEnabled = YES;
+    UITapGestureRecognizer * singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(popBankCard)];
+    
+    [webImgView addGestureRecognizer:singleTap];
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(60, 12, [UIScreen mainScreen].bounds.size.width - 120, 40)];
+    
+    label.text = @"融宝快捷支付协议";
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    [view addSubview:label];
+    
     
     [self.view addSubview:webView];
     
@@ -29,7 +52,11 @@
     
     webView.scrollView.bounces = NO;
     
-    // Do any additional setup after loading the view.
+}
+
+- (void)popBankCard
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

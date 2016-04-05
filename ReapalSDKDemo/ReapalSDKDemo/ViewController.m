@@ -10,16 +10,13 @@
 
 #import "GetTime.h"
 
-#import "SearchBindListViewController.h"
-
 #import "GoodsOrder.h"
 
 #import "ReapalUtil.h"
 
 #import "ReapalApp.h"
 
-
-#import "CardView.h"
+#import "PaySuccessViewController.h"
 
 @interface ViewController ()
 
@@ -30,16 +27,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"测试demo";
-    
-    
 
-    
     [self test];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)test{
     
+
     
     UIButton * refundBtn = [[UIButton alloc] initWithFrame:GTRectMake(self.view.bounds.size.width * 0.5 -80, self.view.frame.size.height * 0.5, 160, 30)];
     refundBtn.backgroundColor = [UIColor grayColor];
@@ -64,21 +59,12 @@
 
 - (void)demo{
     
-//    NSLog(@"%ld",[[GetTime getTime] integerValue]);
-    
-    
-//    SearchBindListViewController * searchVC = [[SearchBindListViewController alloc] init];
-//    
-//    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:searchVC];
-//    
-//    [self presentViewController:navc animated:YES completion:nil];
-    
-    
     GoodsOrder * goodOrder = [[GoodsOrder alloc] init];
     
-    goodOrder.bank_card_type = @"0"; // 卡类型
-    goodOrder.member_id = @"123";  // 用户ID
- 
+//    goodOrder.bank_card_type = @"0"; // 卡类型
+    goodOrder.member_id = @"12300";  // 用户ID
+    //123为已绑卡
+    
     goodOrder.merchant_id = @"100000000008767"; // 商户ID
     
     
@@ -103,10 +89,19 @@
     
     goodOrder.calibrateKey = @"58c4696ag73aa51bc55cg9c91g30104g7dd27b65da2089257173d79egd212453";
     
+    ReapalUtil * reapalUtil = [ReapalUtil defaultUtil];
+    
+    [reapalUtil setPrivateKeyFileName:@"1_pri.key" andPublicFileName:@"1_pub.key"];
+    
+    NSDictionary * params = [reapalUtil privateEncodeOrder:goodOrder andCalibratekey:goodOrder.calibrateKey];
+    
+    NSLog(@"params==>%@",params);
+    
+    GoodsOrder * order = [reapalUtil decryptWithParams:params];
+    
     ReapalApp * app = [[ReapalApp alloc] init];
     
     [app startPay:goodOrder fromScheme:@"myapp" mode:ReapalTestStatus viewController:self];
-    
     
 }
 

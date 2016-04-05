@@ -22,26 +22,33 @@
 
 
 #pragma 正则匹配用户身份证号15或18位
-+ (BOOL) validateIdentityCard: (NSString *)identityCard
-
++ (BOOL)checkIdentityCardNo:(NSString*)cardNo
 {
+    if (cardNo.length != 18) {
+        return  NO;
+    }
+    NSArray* codeArray = [NSArray arrayWithObjects:@"7",@"9",@"10",@"5",@"8",@"4",@"2",@"1",@"6",@"3",@"7",@"9",@"10",@"5",@"8",@"4",@"2", nil];
+    NSDictionary* checkCodeDic = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"1",@"0",@"X",@"9",@"8",@"7",@"6",@"5",@"4",@"3",@"2", nil]  forKeys:[NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil]];
     
-    BOOL flag;
+    NSScanner* scan = [NSScanner scannerWithString:[cardNo substringToIndex:17]];
     
-    if (identityCard.length <= 0) {
-        
-        flag = NO;
-        
-        return flag;
-        
+    int val;
+    BOOL isNum = [scan scanInt:&val] && [scan isAtEnd];
+    if (!isNum) {
+        return NO;
+    }
+    int sumValue = 0;
+    
+    for (int i =0; i<17; i++) {
+        sumValue+=[[cardNo substringWithRange:NSMakeRange(i , 1) ] intValue]* [[codeArray objectAtIndex:i] intValue];
     }
     
-    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+    NSString* strlast = [checkCodeDic objectForKey:[NSString stringWithFormat:@"%d",sumValue%11]];
     
-    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
-    
-    return [identityCardPredicate evaluateWithObject:identityCard];
-    
+    if ([strlast isEqualToString: [[cardNo substringWithRange:NSMakeRange(17, 1)]uppercaseString]]) {
+        return YES;
+    }
+    return  NO;
 }
 
 

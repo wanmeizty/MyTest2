@@ -53,6 +53,7 @@
 
 @property (nonatomic,strong) NSDictionary * dict;
 
+- (GoodsOrder *)initWithDict:(NSDictionary *)dict;
 
 /**
  给各个参数按字母升序排序

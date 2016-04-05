@@ -1,18 +1,14 @@
 //
-//  CardViewController.h
+//  NoBindCardViewController.h
 //  ReapalSDKDemo
 //
-//  Created by wanmeizty on 16/3/28.
+//  Created by 一米阳光 on 16/3/30.
 //  Copyright © 2016年 wanmeizty. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "ParentViewController.h"
-
-#import "GoodsOrder.h"
-
-@interface CardViewController : ParentViewController
+@class GoodsOrder;
+@interface NoBindCardViewController : ParentViewController
 
 @property (nonatomic,strong) GoodsOrder * order;
 

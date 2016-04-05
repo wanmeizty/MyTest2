@@ -20,7 +20,11 @@
 
 #import "CardInfoCell.h"
 
-#import "CardViewController.h"
+#import "NoBindCardViewController.h"
+
+#import "PayResultViewController.h"
+
+#import "PaySuccessViewController.h"
 
 @interface BindPayViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
@@ -48,14 +52,22 @@
     
     UIButton * _payBtn;
     
+    
+    NSInteger  _sendSMSCount;
+    
+    NSDictionary * _cardInfo;
+    
 
 }
 @end
+
+static int stopNum = 1;
 
 @implementation BindPayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     [self createBindPayView];
     
@@ -71,6 +83,8 @@
     _tableView.hidden = YES;
     
     _backgroundView.hidden = YES;
+    
+    _sendSMSCount = 0;
     
 }
 
@@ -98,7 +112,6 @@
 }
 
 #pragma mark -- tableViewDelegate
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.cardList.count + 2;
@@ -109,6 +122,7 @@
     
     return 40;
 }
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,7 +140,10 @@
         _backgroundView.hidden = YES;
         _tableView.hidden = YES;
         
+        _cardInfo = dict;
+        
         [self setcardViewWithCardInfo:dict];
+        
         
     }
     
@@ -225,44 +242,16 @@
     
 }
 
-
-#pragma mark UItextFieldDelegate
-// 输入验证码为6位
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    
-
-    if (textField.text.length - range.length == 0 && range.length != 0){
-        
-        _payBtn.enabled = NO;
-        _payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_13.png"]];
-        
-    }else{
-        
-        _payBtn.enabled = YES;
-        _payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_03.png"]];
-
-    }
- 
-    if (textField.text.length >= 6 && range.length == 0) {
-        
-        return NO;
-        
-    }
-    
-    return YES;
-    
-}
-
 // 选择其他支付方式
 - (void)addCard{
     
-    CardViewController * cardVC = [[CardViewController alloc] init];
+    NoBindCardViewController * notcardVC = [[NoBindCardViewController alloc] init];
     
-    cardVC.order = self.order;
+    notcardVC.order = self.order;
     
-    cardVC.isNotFirst = YES;
+    notcardVC.isNotFirst = YES;
     
-    [self.navigationController pushViewController:cardVC animated:YES];
+    [self.navigationController pushViewController:notcardVC animated:YES];
     
 }
 
@@ -273,7 +262,6 @@
     _tableView.hidden = YES;
     
 }
-
 
 - (void)goToBack{
     
@@ -339,12 +327,12 @@
     UILabel * phoneLabel = [[UILabel alloc] initWithFrame:GTRectMake(10, 40, zwidth - 20, 40)];
     
     
-    phoneLabel.text = cardInfo[@"phone"];//[NSString stringWithFormat:@"手机号      %@",mutStr];
+    phoneLabel.text = [NSString stringWithFormat:@"手机号  %@",cardInfo[@"phone"]]; //cardInfo[@"phone"];//[NSString stringWithFormat:@"手机号      %@",mutStr];
     phoneLabel.font = [UIFont systemFontOfSize:16];
     [backView addSubview:phoneLabel];
     
     
-    UILabel * line2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 79, zwidth - 10, 1)];
+    UILabel * line2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, zwidth - 10, 1)];
     line2.backgroundColor = [UIColor lightGrayColor];
     [backView addSubview:line2];
     
@@ -356,10 +344,9 @@
     [backView addSubview:label];
     
     _calibrate = [[UITextField alloc] initWithFrame:GTRectMake(70, 80, zwidth - 190, 30)];
-    
+    _calibrate.delegate = self;
     //    _calibrate.borderStyle = UITextBorderStyleRoundedRect;
     _calibrate.placeholder = @"输入验证码";
-    _calibrate.delegate = self;
     [backView addSubview:_calibrate];
     
     
@@ -378,17 +365,15 @@
     [_smsBtn addGestureRecognizer:singleTap];
     
     
-    UIButton * payBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 200, zwidth - 40, 40)];
+    UIButton * payBtn = [[UIButton alloc] initWithFrame:GTRectMake(20, 200, zwidth - 40, 40)];
     
     [payBtn setTitle:@"确认支付" forState:UIControlStateNormal];
-//    payBtn.backgroundColor = [UIColor grayColor];
-    [payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
+    payBtn.backgroundColor = [UIColor grayColor];
+    [payBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _payBtn = payBtn;
-    payBtn.enabled = NO;
-    payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_13.png"]];
-    
-    [payBtn addTarget:self action:@selector(payEnsure) forControlEvents:UIControlEventTouchUpInside];
+    _payBtn.enabled = NO;
+    _payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_13.png"]];
+    [payBtn addTarget:self action:@selector(bindPaySure) forControlEvents:UIControlEventTouchUpInside];
     
     [self.mainView addSubview:payBtn];
     
@@ -437,20 +422,30 @@
     return calibrateKey;
 }
 
-- (void)payEnsure{
-    
+- (void)bindPaySure{
     
     GoodsOrder * goodOrder = [[GoodsOrder alloc] init];
     
-    goodOrder.merchant_id = self.order.merchant_id; // 商户ID
+    goodOrder.merchant_id = self.order.merchant_id; //@"100000000009085"; // 商户ID
+    
     goodOrder.order_no = self.order.order_no; // @"MP1Q7QO420H0RPND6YD2"; //[UnionPayUtil generateTradeNO];
+    
+    
     goodOrder.check_code = _calibrate.text; //@"434526";
-    goodOrder.card_no = self.order.card_no;  //@"6217000010066764658";
-    goodOrder.owner = self.order.owner; //@"zty"; //self.order.owner;
-    goodOrder.cert_no = self.order.cert_no; //@"426754534534534545"; //self.order.card_no;
-    goodOrder.phone = self.order.phone; // @"18314533172"; //self.order.phone;
+    
+    
+    //    if ([self.order.bank_card_type isEqualToString:@"0"]) {
+    //
+    //        goodOrder.cvv2 = textfiled8.text; //[textfiled1.text
+    //
+    //
+    //        goodOrder.validthru = textfiled7.text; //@"0221";
+    //    }
+    
     
     goodOrder.version = @"3.1.2";
+    
+    //    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809"; // 安全校验码
     
     NSString * calibrateKey = [self selectCalibrate:goodOrder.merchant_id];
     
@@ -478,12 +473,38 @@
         //        NSData *EncryptData = [GTMBase64 decodeString:dataStr];//解密前进行GTMBase64编码
         //
         //        NSString * deDataStr = [unionUtil decryptAESData:EncryptData app_key:decryptKeyStr];
-        
         NSString * deDataStr = [unionUtil decryptAESWithString:dataStr app_key:decryptKeyStr];
-        
         NSLog(@"解密数据==>%@",deDataStr);
         
+        NSString * dekey = [NSString stringWithFormat:@"解密key==>%@",decryptKeyStr];
+        
+        NSString * deStr = [NSString stringWithFormat:@"解密数据==>%@",deDataStr];
+        
+        NSString * showStr = [NSString stringWithFormat:@"%@\n%@",dekey,deStr];
+        
+        NSDictionary * myDict = [ReapalUtil dictionaryWithJsonString:deDataStr];
+        
+        NSLog(@"%@",myDict);
+        NSLog(@"%@",myDict[@"result_msg"]);
+        
+        if (![myDict[@"result_code"] isEqualToString:@"0000"]) {
+            
+            
+            [self performSelectorOnMainThread:@selector(paysucess) withObject:nil waitUntilDone:YES];
+        }
+        
+        
     }];
+    
+}
+
+- (void)paysucess{
+    
+    PaySuccessViewController * paysussVC = [[PaySuccessViewController alloc] init];
+    
+    paysussVC.order = self.order;
+    
+    [self.navigationController pushViewController:paysussVC animated:YES];
     
 }
 
@@ -492,6 +513,7 @@
     
     [self createViewWithTitle:self.order.title orderNO:self.order.order_no totalFee:self.order.total_fee];
     
+    _cardInfo = self.cardList[0];
     
     [self setcardViewWithCardInfo:self.cardList[0]];
     
@@ -504,61 +526,154 @@
     
 }
 
+
 - (void)sendSMS{
     
+    _sendSMSCount ++;
     
-    
-    GoodsOrder * goodOrder = [[GoodsOrder alloc] init];
-    goodOrder.merchant_id = self.order.merchant_id;
-    //    goodOrder.card_no = self.order.card_no;
-    //    goodOrder.bind_id = self.order.bind_id;
-    //    goodOrder.member_id = self.order.member_id;
-    goodOrder.order_no = self.order.order_no;
-    //    goodOrder.terminal_type = self.order.terminal_type;
-    //    goodOrder.version = self.order.version;
-    
-    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809"; // 安全校验码
-    
-    ReapalUtil * realpalUtil = [ReapalUtil defaultUtil];
-    
-    // 导入公钥私钥文件
-    [realpalUtil setPrivateKeyFileName:@"1_pri.key" andPublicFileName:@"1_pub.key"];
-    
-    // 加密数据
-    NSDictionary * params = [realpalUtil encodeOrder:goodOrder andCalibratekey:calibrateKey];
-    
-    [self.view endEditing:YES];
-    
-    [[ReapalSdk defaultSdk] smsWithDictionary:params isTest:ReapalTestStatus callback:^(NSDictionary *resultDic) {
+    if (_sendSMSCount == 1) {
         
-        if (resultDic == nil) {
-            //             [self performSelectorOnMainThread:@selector(goPay) withObject:nil waitUntilDone:YES];
-            return ;
-        }
+        GoodsOrder * goodOrder = [[GoodsOrder alloc] init];
+        goodOrder.merchant_id = self.order.merchant_id;//@"100000000009085"; // 商户ID
         
-        NSString * dataStr = resultDic[@"data"];
+        goodOrder.member_id = self.order.member_id; //@"12345678900";  // 用户ID
         
-        NSString * encryptkey = resultDic[@"encryptkey"];
+        goodOrder.bind_id = _cardInfo[@"bind_id"]; //@"6024";
         
-        NSString * decryptKeyStr = [realpalUtil rsaDecryptContent:encryptkey];
+        goodOrder.order_no = self.order.order_no;
+        goodOrder.transtime = @"2015-06-12 16:52:57";
+        goodOrder.currency = @"156";
         
-        NSLog(@"解密key==>%@",decryptKeyStr);
+        goodOrder.total_fee = self.order.total_fee; //@"1";
         
-        // 解密：
-//        NSData *EncryptData = [GTMBase64 decodeString:dataStr];//解密前进行GTMBase64编码
-//        
-//        NSString * deDataStr = [realpalUtil decryptAESData:EncryptData app_key:decryptKeyStr];
+        goodOrder.title = self.order.title;  //@"t33257"; // 商品名称
         
-        NSString * deDataStr = [realpalUtil decryptAESWithString:dataStr app_key:decryptKeyStr];
-        
-        NSLog(@"解密数据==>%@",deDataStr);
-        
-        NSDictionary * myDict = [ReapalUtil dictionaryWithJsonString:deDataStr];
+        goodOrder.body = self.order.body; //@"yyyy"; // 商品描述
+        goodOrder.terminal_info = @"dddss-daddd";
+        goodOrder.terminal_type = @"mobile";
+        goodOrder.member_ip = @"192.168.1.83"; // 用户IP
+        goodOrder.seller_email = @"492215340@qq.com"; // @"492215340@qq.com"; // 商户邮箱
+        goodOrder.notify_url = @"http://testcashier.reapal.com/test/mobile/notify";
+        goodOrder.token_id = @"11534545fdsfsda";
+        goodOrder.version = @"3.1.2";
         
         
-        NSLog(@"%@",myDict);
+        //    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809";// 安全校验码
         
-    }];
+        NSString * calibrateKey = [self selectCalibrate:goodOrder.merchant_id];
+        
+        ReapalUtil * unionUtil = [ReapalUtil defaultUtil];
+        
+        // 导入公钥私钥文件
+        [unionUtil setPrivateKeyFileName:@"1_pri.key" andPublicFileName:@"1_pub.key"];
+        
+        // 加密数据
+        NSDictionary * params = [unionUtil encodeOrder:goodOrder andCalibratekey:calibrateKey];
+        
+        
+        [[ReapalSdk defaultSdk] bindCardWithDictionary:params isTest:ReapalTestStatus callback:^(NSDictionary *resultDic) {
+            
+            //        if (resultDic == nil) {
+            //            //             [self performSelectorOnMainThread:@selector(goPay) withObject:nil waitUntilDone:YES];
+            //            return ;
+            //        }
+            
+            NSString * dataStr = resultDic[@"data"];
+            
+            NSString * encryptkey = resultDic[@"encryptkey"];
+            
+            NSString * decryptKeyStr = [unionUtil rsaDecryptContent:encryptkey];
+            
+            NSLog(@"解密key==>%@",decryptKeyStr);
+            
+            // 解密：
+            //        NSData *EncryptData = [GTMBase64 decodeString:dataStr];//解密前进行GTMBase64编码
+            //
+            //        NSString * deDataStr = [unionUtil decryptAESData:EncryptData app_key:decryptKeyStr];
+            NSString * deDataStr = [unionUtil decryptAESWithString:dataStr app_key:decryptKeyStr];
+            NSLog(@"解密数据==>%@",deDataStr);
+            
+            NSDictionary * myDict = [ReapalUtil dictionaryWithJsonString:deDataStr];
+            
+            NSLog(@"%@",myDict);
+            NSLog(@"%@",myDict[@"result_msg"]);
+            
+            if (![myDict[@"result_code"] isEqualToString:@"0000"]) {
+                
+                
+            }
+            
+            NSString * dekey = [NSString stringWithFormat:@"解密key==>%@",decryptKeyStr];
+            
+            NSString * deStr = [NSString stringWithFormat:@"解密数据==>%@",deDataStr];
+            
+            NSString * showStr = [NSString stringWithFormat:@"%@\n%@",dekey,deStr];
+            
+            
+        }];
+        
+    }else if (_sendSMSCount == 2 || _sendSMSCount == 3){
+        
+        
+        GoodsOrder * goodOrder = [[GoodsOrder alloc] init];
+        
+        goodOrder.merchant_id = self.order.merchant_id; // @"100000000009085"; // 商户ID
+        
+        goodOrder.order_no = self.order.order_no; //@"MP1Q7QO420H0RPND6YD2";// [UnionPayUtil generateTradeNO];
+        //    goodOrder.version = @"3.1.2";
+        
+        //    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809"; // 安全校验码
+        
+        NSString * calibrateKey = [self selectCalibrate:goodOrder.merchant_id];
+        
+        ReapalUtil * unionUtil = [ReapalUtil defaultUtil];
+        
+        // 导入公钥私钥文件
+        [unionUtil setPrivateKeyFileName:@"1_pri.key" andPublicFileName:@"1_pub.key"];
+        
+        // 加密数据
+        NSDictionary * params = [unionUtil encodeOrder:goodOrder andCalibratekey:calibrateKey];
+        
+        // 支付
+        [[ReapalSdk defaultSdk] smsWithDictionary:params isTest:ReapalTestStatus callback:^(NSDictionary *resultDic) {
+            
+            NSString * dataStr = resultDic[@"data"];
+            
+            NSString * encryptkey = resultDic[@"encryptkey"];
+            
+            NSString * decryptKeyStr = [unionUtil rsaDecryptContent:encryptkey];
+            
+            NSLog(@"解密key==>%@",decryptKeyStr);
+            
+            // 解密：
+            //        NSData *EncryptData = [GTMBase64 decodeString:dataStr];//解密前进行GTMBase64编码
+            //
+            //        NSString * deDataStr = [unionUtil decryptAESData:EncryptData app_key:decryptKeyStr];
+            NSString * deDataStr = [unionUtil decryptAESWithString:dataStr app_key:decryptKeyStr];
+            NSLog(@"解密数据==>%@",deDataStr);
+            
+            
+            NSString * dekey = [NSString stringWithFormat:@"解密key==>%@",decryptKeyStr];
+            
+            NSString * deStr = [NSString stringWithFormat:@"解密数据==>%@",deDataStr];
+            
+            NSString * showStr = [NSString stringWithFormat:@"%@\n%@",dekey,deStr];
+            
+            
+            
+            
+        }];
+        
+        
+    }else if (_sendSMSCount > 3){
+        
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"验证码操作过于频繁" message:nil delegate:nil cancelButtonTitle:@"确认" otherButtonTitles: nil];
+        
+        [alertView show];
+        
+        return ;
+        
+    }
     
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTime3) userInfo:nil repeats:YES];
@@ -566,8 +681,6 @@
     
 }
 
-
-// 短信验证倒计时
 - (void)updateTime3{
     
     static NSInteger k = 61;
@@ -576,20 +689,33 @@
     _smsBtn.userInteractionEnabled = NO;
     _smsBtn.enabled = NO;
     _smsBtn.text = [NSString stringWithFormat:@"(%ld)秒后重发",k];
-    if (k == 0) {
-        
-        _smsBtn.text = @"获取验证码";
-        _smsBtn.enabled = YES;
-        _smsBtn.userInteractionEnabled = YES;
-        [_timer setFireDate:[NSDate distantFuture]];
-        
-        k = 61;
+
+        if (k == 0) {
+            if (stopNum == 4) {
+                _smsBtn.userInteractionEnabled = NO;
+                _smsBtn.enabled = NO;
+                UIAlertView * alter = [[UIAlertView alloc] initWithTitle:nil message:@"您本次订单请求次数过多，请在一个小时后重新请求" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil];
+                
+                [alter show];
+
+            }else{
+                _smsBtn.enabled = YES;
+                _smsBtn.userInteractionEnabled = YES;
+            }
+            _smsBtn.text = @"获取验证码";
+            [_timer setFireDate:[NSDate distantFuture]];
+
+            
+            k = 61;
+            
         
     }
     
+
+    
 }
 
-// 打开换卡界面
+
 - (void)changeCard{
     
     _backgroundView.hidden = NO;
@@ -597,6 +723,45 @@
     _tableView.frame = CGRectMake(30,180,zwidth - 60,40 * self.cardList.count + 80);
     
     
+    
+    NSLog(@"点击了");
+    
+}
+
+- (void)payResult
+{
+    PayResultViewController * payResultVC = [[PayResultViewController alloc] init];
+    
+    payResultVC.order = self.order;
+    
+    [self.navigationController pushViewController:payResultVC animated:YES];
+}
+
+
+#pragma mark UItextFieldDelegate
+// 输入验证码为6位
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    
+    if (textField.text.length - range.length == 0 && range.length != 0){
+        
+        _payBtn.enabled = NO;
+        _payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_13.png"]];
+        
+    }else{
+        
+        _payBtn.enabled = YES;
+        _payBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"buttons_03.png"]];
+        
+    }
+    
+    if (textField.text.length >= 6 && range.length == 0) {
+        
+        return NO;
+        
+    }
+    
+    return YES;
     
 }
 

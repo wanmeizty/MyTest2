@@ -195,6 +195,91 @@
     
 }
 
+/**
+ *  加密订单参数
+ *
+ *  @param goodsOrder 加密的订单对象
+ *
+ */
+- (NSDictionary *)privateEncodeOrder:(GoodsOrder *)goodsOrder andCalibratekey:(NSString *)calibrateKey{
+    
+    NSString * orderSignStr = [goodsOrder sortParam];
+    
+    // 获取随机串
+    NSString * key = [self get16bitRandomString];
+    
+    // 加密随机串
+    NSString * enString = [_handler encryptWithPrivatecKey:key];
+    
+    // 把参数和安全校验码拼接起来签名
+    NSString * signedStr = [self signString:[NSString stringWithFormat:@"%@%@",orderSignStr,calibrateKey]];
+    
+    NSMutableDictionary * dict = [[NSMutableDictionary alloc] initWithDictionary:goodsOrder.dict];
+    
+    
+    
+    
+    [dict setObject:signedStr forKey:@"sign"];
+    
+    [dict setObject:@"MD5" forKey:@"sign_type"];
+    
+    NSLog(@"%@",dict);
+    
+    NSString * jsonstr = [self dictionaryToJson:dict];
+    
+    
+    NSString * enJsonStr = [AESHandler encryptAESData:jsonstr app_key:key];
+    
+    NSString * merchantNo = goodsOrder.merchant_id;
+    
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+    //    NSLog(@"%@---------------------------------------------%@",enJsonStr,enString);
+    
+    [params setValue:merchantNo forKey:@"merchant_id"];
+    
+    
+    [params setValue:enJsonStr forKey:@"data"];
+    
+    
+    [params setValue:enString forKey:@"encryptkey"];
+    
+    return params;
+    
+}
+
+/**
+ *  还原订单参数
+ *
+ *  @param params 加密的字典
+ *
+ */
+- (GoodsOrder *)decryptWithParams:(NSDictionary *) params{
+    
+    NSString * enKey = params[@"encryptkey"];
+    
+    NSString * deKey = [_handler decryptWithPublicKey:enKey];
+    
+    NSString * enData = params[@"data"];
+    
+    NSData * data = [GTMBase64 decodeString:enData];
+    
+    NSString * deData = [AESHandler decryptAESData:data app_key:deKey];
+    
+    //    NSLog(@"deKey==>%@",deKey);
+    //    NSLog(@"deData==>%@",deData);
+    
+    NSDictionary * dict = [ReapalUtil dictionaryWithJsonString:deData];
+    
+    //    NSLog(@"%@",dict);
+    
+    GoodsOrder * order = [[GoodsOrder alloc] initWithDict:dict];
+    
+    
+    
+    return order;
+    
+}
 
 /**
  *  RSA 公钥加密

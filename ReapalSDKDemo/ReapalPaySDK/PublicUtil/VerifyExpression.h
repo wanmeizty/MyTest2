@@ -15,7 +15,7 @@
  正则匹配手机号
  
  */
-+ (BOOL)checkTelNumber:(NSString *)telNumber;
++ (BOOL)checkTelNumber:(NSString *)telNumber;
 
 
 /**
@@ -23,7 +23,7 @@
  正则匹配用户身份证号
  
  */
-+ (BOOL) validateIdentityCard: (NSString *)identityCard;
++ (BOOL)checkIdentityCardNo:(NSString*)cardNo;
 
 
 /**

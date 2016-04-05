@@ -12,15 +12,16 @@
 
 #import "ReapalUtil.h"
 
-#import "BindPayViewController.h"
+#import "NoBindCardViewController.h"
 
-#import "CardViewController.h"
+#import "BindPayViewController.h"
 
 @interface ReapalApp ()
 {
     GoodsOrder * _order;
+    
+//    NSDictionary * _bankInfo;
     NSArray * _cardList;
-    NSDictionary * _bankInfo;
 //    UIViewController * _vc;
 }
 
@@ -54,12 +55,13 @@
     
     
     
-    searchOrder.bank_card_type = order.bank_card_type; // @"0" // 卡类型
+//    searchOrder.bank_card_type = order.bank_card_type; // @"0" // 卡类型
     
-    searchOrder.member_id = order.member_id ; //@"12345678900";  // 用户ID
-    
-    searchOrder.merchant_id = order.merchant_id; // @"100000000009085"; // 商户ID
-    
+//    searchOrder.member_id = order.member_id ; //@"12345678900";  // 用户ID
+//    
+//    searchOrder.merchant_id = order.merchant_id; // @"100000000009085"; // 商户ID
+    searchOrder.member_id = order.member_id ;
+    searchOrder.merchant_id = order.merchant_id;
 //    NSString * calibrateKey = @"48958gg3a25eeabg5fdgb4d95g93d4a4gfeb92c4g02ef276518da56cb9c7a809";// 安全校验码
     
     ReapalUtil * reapalUtil = [ReapalUtil defaultUtil];
@@ -76,9 +78,6 @@
     
     // 绑卡请求
     [[ReapalSdk defaultSdk] searchBindCardlistWithDictionary:params isTest:ReapalTestStatus callback:^(NSDictionary *resultDic) {
-        
-        
-        NSLog(@"dddd");
         
         if (resultDic == nil) {
             //             [self performSelectorOnMainThread:@selector(goPay) withObject:nil waitUntilDone:YES];
@@ -105,50 +104,21 @@
         //
         //        [self performSelectorOnMainThread:@selector(getData:) withObject:sss waitUntilDone:YES];
         
-        
         NSDictionary * myDict = [ReapalUtil dictionaryWithJsonString:deDataStr];
         
-        
-        NSLog(@"%@",myDict);
-        
         NSArray * cardList = [myDict objectForKey:@"bind_card_list"];
-        
-        
         _cardList = cardList;
         
-//        for (NSDictionary * subDic in cardList) {
-//            
-//            if ([subDic[@"bind_id"] isEqualToString:order.bind_id]) {
-//                
-//                // 绑过卡
-//                //                                _cardInfo = subDic;
-//                NSLog(@"%@",subDic);
-//                NSLog(@"%@",subDic[@"bank_name"]);
-//                
-//                
-//                
-//                [self performSelectorOnMainThread:@selector(goPayVC) withObject:nil waitUntilDone:YES];
-//                
-//                
-//                return ;
-//                
-//            }
-//            
-//        }
-        
-        if (cardList.count > 0) {
-            // 绑过卡
-        
-            _bankInfo = cardList[0];
-            [self performSelectorOnMainThread:@selector(goPayVC) withObject:nil waitUntilDone:YES];
+        if (cardList.count == 0) {
+            NSLog(@"用户未绑卡");
             
+            
+            [self performSelectorOnMainThread:@selector(noBindCard) withObject:nil waitUntilDone:YES];
             
         }else{
+            NSLog(@"用户已绑卡");
             
-            // 没有绑过卡
-            
-            [self performSelectorOnMainThread:@selector(gobindCardVC) withObject:nil waitUntilDone:YES];
-            
+            [self performSelectorOnMainThread:@selector(hasBindCard) withObject:nil waitUntilDone:YES];
         }
         
         
@@ -157,39 +127,66 @@
     
 }
 
-- (void)goPayVC{
+- (void)noBindCard
+{
     
-    BindPayViewController * payVC = [[BindPayViewController alloc] init];
+    NoBindCardViewController * hasNoBCVC = [[NoBindCardViewController alloc] init];
     
-    payVC.order = _order;
+    hasNoBCVC.order = _order;
+    
+    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:hasNoBCVC];
+    
+    //    [navc pushViewController:payVC animated:YES];
+    [_vc presentViewController:navc animated:YES completion:nil];
+
+}
+
+- (void)hasBindCard
+{
+    BindPayViewController * bindPayVC = [[BindPayViewController alloc] init];
+    
+    bindPayVC.order = _order;
+    bindPayVC.cardList = _cardList;
+    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:bindPayVC];
+    
+    //    [navc pushViewController:payVC animated:YES];
+    [_vc presentViewController:navc animated:YES completion:nil];
+}
+
+
+//- (void)goPayVC{
+//    
+//    PayViewController * payVC = [[PayViewController alloc] init];
+//    
+//    payVC.order = _order;
+//    payVC.isBind = YES;
 //    payVC.cardInfo = _bankInfo;
-    payVC.cardList = _cardList;
-    
-    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:payVC];
-    
-//    [navc pushViewController:payVC animated:YES];
-    [_vc presentViewController:navc animated:YES completion:nil];
-    
-    //    SmsViewController * smsVC = [[SmsViewController alloc] init];
-    //
-    //    smsVC.order = self.order;
-    //
-    //    [self.navigationController pushViewController:smsVC animated:YES];
-    
-}
-
-- (void)gobindCardVC{
-    
-    CardViewController * cardVC = [[CardViewController alloc] init];
-    
-    cardVC.order = _order;
-    
-    
-    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:cardVC];
-    
-    
-    
-    [_vc presentViewController:navc animated:YES completion:nil];
-}
-
+//    
+//    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:payVC];
+//    
+////    [navc pushViewController:payVC animated:YES];
+//    [_vc presentViewController:navc animated:YES completion:nil];
+//    
+//    //    SmsViewController * smsVC = [[SmsViewController alloc] init];
+//    //
+//    //    smsVC.order = self.order;
+//    //
+//    //    [self.navigationController pushViewController:smsVC animated:YES];
+//    
+//}
+//
+//- (void)gobindCardVC{
+//    
+//    HasNoBindCardViewController * noBindCardVC = [[HasNoBindCardViewController alloc] init];
+//    
+//    noBindCardVC.order = _order;
+//    
+//    
+//    UINavigationController * navc = [[UINavigationController alloc] initWithRootViewController:noBindCardVC];
+//    
+//    
+//    
+//    [_vc presentViewController:navc animated:YES completion:nil];
+//}
+//
 @end

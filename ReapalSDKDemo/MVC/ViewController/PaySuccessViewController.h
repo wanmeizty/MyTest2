@@ -1,17 +1,16 @@
 //
-//  BindCardViewController.h
-//  TestZ
+//  PaySuccessViewController.h
+//  ReapalSDKDemo
 //
-//  Created by wanmeizty on 16/2/29.
+//  Created by wanmeizty on 16/3/31.
 //  Copyright © 2016年 wanmeizty. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
 #import "ParentViewController.h"
 
 #import "GoodsOrder.h"
 
-@interface DebitCardViewController : ParentViewController
+@interface PaySuccessViewController : ParentViewController
 
 @property (nonatomic,strong) GoodsOrder * order;
 

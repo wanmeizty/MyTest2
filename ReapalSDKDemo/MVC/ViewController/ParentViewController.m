@@ -35,6 +35,7 @@
     
     self.customNavigationBar = view;
     view.backgroundColor = [UIColor blackColor];
+    view.tag = 100;
     [self.view addSubview:view];
     
     UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(zwidth * 0.5 - 50,0, 100, 44)];
@@ -49,8 +50,8 @@
     [backBtn addTarget:self action:@selector(goToBack) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:backBtn];
     
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+    //243.241.245
+    self.view.backgroundColor = [UIColor colorWithRed:241/255.0 green:243/255.0 blue:245/255.0 alpha:1];
 
 }
 
